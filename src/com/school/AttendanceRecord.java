@@ -13,7 +13,7 @@ public class AttendanceRecord {
             this.status = status;
         } else {
             this.status = "Invalid";
-            System.out.println("Warning: Invalid status provided for studentId " + studentId + " and courseId " + courseId);
+            System.out.println("Warning: Invalid attendance status provided for studentId " + studentId);
         }
     }
 
@@ -31,6 +31,6 @@ public class AttendanceRecord {
     }
 
     public void displayRecord() {
-        System.out.println("Student ID: S" + studentId + ", Course ID: C" + courseId + ", Status: " + status);
+        System.out.println("Student ID: " + studentId + ", Course ID: " + courseId + ", Status: " + status);
     }
 }

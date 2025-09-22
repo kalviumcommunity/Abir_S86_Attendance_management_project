@@ -8,9 +8,9 @@ public class Main {
         System.out.println("--- School Attendance System ---");
 
         // Students
-        Student s1 = new Student("Alice Wonderland");
-        Student s2 = new Student("Bob The Builder");
-        Student s3 = new Student("Charlie Brown");
+        Student s1 = new Student("Alice Wonderland", "S001");
+        Student s2 = new Student("Bob The Builder", "S002");
+        Student s3 = new Student("Charlie Brown", "S003");
 
         // Courses
         Course c1 = new Course("Intro to Programming");
