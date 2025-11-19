@@ -1,45 +1,42 @@
 package com.school;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("--- School Attendance System ---");
+        // Create Students
+        Student s1 = new Student("Alice", "Grade 10");
+        Student s2 = new Student("Bob", "Grade 11");
 
-        // Students
-        Student s1 = new Student("Alice Wonderland", "S001");
-        Student s2 = new Student("Bob The Builder", "S002");
-        Student s3 = new Student("Charlie Brown", "S003");
+        // Create Teacher and Staff
+        Teacher t1 = new Teacher("Dr. Smith", "Physics");
+        Staff st1 = new Staff("Mr. John", "Librarian");
 
-        // Courses
-        Course c1 = new Course("Intro to Programming");
-        Course c2 = new Course("Linear Algebra");
-        Course c3 = new Course("Data Structures");
-
-        // Display Students
-        System.out.println("\nRegistered Students:");
+        // Display Person hierarchy
+        System.out.println("=== People in School ===");
         s1.displayDetails();
         s2.displayDetails();
-        s3.displayDetails();
+        t1.displayDetails();
+        st1.displayDetails();
 
-        // Display Courses
-        System.out.println("\nAvailable Courses:");
+        // Create Courses
+        Course c1 = new Course("Mathematics");
+        Course c2 = new Course("Physics");
+
+        System.out.println("\n=== Registered Courses ===");
         c1.displayDetails();
         c2.displayDetails();
-        c3.displayDetails();
 
-        // Attendance Records
+        // Attendance log
         List<AttendanceRecord> attendanceLog = new ArrayList<>();
-        attendanceLog.add(new AttendanceRecord(s1.getStudentId(), c1.getCourseId(), "Present"));
-        attendanceLog.add(new AttendanceRecord(s2.getStudentId(), c2.getCourseId(), "Absent"));
-        attendanceLog.add(new AttendanceRecord(s3.getStudentId(), c3.getCourseId(), "Late")); // invalid status
+        attendanceLog.add(new AttendanceRecord(s1.getId(), c1.getCourseId(), "Present"));
+        attendanceLog.add(new AttendanceRecord(s2.getId(), c2.getCourseId(), "Absent"));
+        attendanceLog.add(new AttendanceRecord(s1.getId(), c2.getCourseId(), "Late")); // Invalid
 
-        System.out.println("\nAttendance Records:");
+        System.out.println("\n=== Attendance Records ===");
         for (AttendanceRecord record : attendanceLog) {
             record.displayRecord();
         }
-
-        System.out.println("\nPart 4: Data Encapsulation & Attendance Recording Complete.");
     }
 }

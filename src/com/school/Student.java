@@ -12,10 +12,6 @@ public class Student extends Person {
         return gradeLevel;
     }
 
-    public int getStudentId() {
-        return getId();  // This returns the id from the Person class
-    }
-
     @Override
     public void displayDetails() {
         super.displayDetails();
